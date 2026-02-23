@@ -1,0 +1,480 @@
+<!-- SCAFFOLDING: strip outer html/head/body when embedding -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrations — Proof</title>
+</head>
+<body>
+<!-- /SCAFFOLDING -->
+
+<div class="prf-integrations">
+<style>
+/* ── Custom Properties ── */
+.prf-integrations {
+  --prf-font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --prf-color-bg: #ffffff;
+  --prf-color-bg-alt: #f5f5f5;
+  --prf-color-bg-card: #ffffff;
+  --prf-color-text: #1a1a1a;
+  --prf-color-text-secondary: #555555;
+  --prf-color-accent: #2a5caa;
+  --prf-color-accent-hover: #1e4a8a;
+  --prf-color-border: #e0e0e0;
+  --prf-color-tag-bg: #eaeaea;
+  --prf-color-tag-text: #444444;
+  --prf-space-xs: 8px;
+  --prf-space-sm: 16px;
+  --prf-space-md: 32px;
+  --prf-space-lg: 48px;
+  --prf-space-xl: 80px;
+  --prf-max-width: 52rem;
+}
+
+/* ── Reset & Base ── */
+.prf-integrations {
+  font-family: var(--prf-font);
+  color: var(--prf-color-text);
+  background: var(--prf-color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.prf-integrations *,
+.prf-integrations *::before,
+.prf-integrations *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Section rhythm ── */
+.prf-integrations .prf-section {
+  padding: var(--prf-space-lg) var(--prf-space-sm);
+}
+
+.prf-integrations .prf-section--alt {
+  background: var(--prf-color-bg-alt);
+}
+
+.prf-integrations .prf-container {
+  max-width: var(--prf-max-width);
+  margin: 0 auto;
+}
+
+/* ── Typography ── */
+.prf-integrations h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.prf-integrations h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: var(--prf-space-md);
+}
+
+.prf-integrations h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: var(--prf-space-xs);
+}
+
+.prf-integrations p {
+  margin-bottom: var(--prf-space-sm);
+}
+
+.prf-integrations p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── 1. Hero ── */
+.prf-integrations .prf-hero {
+  padding: var(--prf-space-xl) var(--prf-space-sm) var(--prf-space-lg);
+  text-align: center;
+}
+
+.prf-integrations .prf-hero__subtitle {
+  font-size: 1.2rem;
+  color: var(--prf-color-text-secondary);
+  max-width: 38rem;
+  margin: var(--prf-space-sm) auto 0;
+  line-height: 1.5;
+}
+
+/* ── 2. Narrative ── */
+.prf-integrations .prf-narrative p {
+  font-size: 1.05rem;
+  color: var(--prf-color-text-secondary);
+}
+
+/* ── 3. Customer Stories ── */
+.prf-integrations .prf-stories__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--prf-space-md);
+}
+
+.prf-integrations .prf-story-card {
+  background: var(--prf-color-bg-card);
+  border: 1px solid var(--prf-color-border);
+  border-radius: 8px;
+  padding: var(--prf-space-md);
+}
+
+.prf-integrations .prf-story-card__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--prf-color-tag-bg);
+  color: var(--prf-color-tag-text);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: var(--prf-space-sm);
+}
+
+.prf-integrations .prf-story-card__headline {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--prf-space-xs);
+}
+
+.prf-integrations .prf-story-card__body {
+  color: var(--prf-color-text-secondary);
+  margin-bottom: var(--prf-space-sm);
+}
+
+.prf-integrations .prf-story-card__quote {
+  border-left: 3px solid var(--prf-color-accent);
+  padding-left: var(--prf-space-sm);
+  font-style: italic;
+  color: var(--prf-color-text);
+  margin-bottom: var(--prf-space-sm);
+}
+
+.prf-integrations .prf-story-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--prf-space-xs);
+}
+
+.prf-integrations .prf-story-card__tech span {
+  font-size: 0.75rem;
+  background: var(--prf-color-bg-alt);
+  color: var(--prf-color-text-secondary);
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--prf-color-border);
+}
+
+/* ── 4. How We Work ── */
+.prf-integrations .prf-methods__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--prf-space-md);
+}
+
+.prf-integrations .prf-method-block {
+  background: var(--prf-color-bg-card);
+  border: 1px solid var(--prf-color-border);
+  border-radius: 8px;
+  padding: var(--prf-space-md);
+}
+
+.prf-integrations .prf-method-block__body {
+  color: var(--prf-color-text-secondary);
+  margin-bottom: var(--prf-space-sm);
+}
+
+.prf-integrations .prf-method-block__anecdote {
+  font-style: italic;
+  color: var(--prf-color-text-secondary);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--prf-color-border);
+  padding-top: var(--prf-space-sm);
+}
+
+/* ── 5. Technology Note ── */
+.prf-integrations .prf-tech-note p {
+  font-size: 1.05rem;
+  color: var(--prf-color-text-secondary);
+}
+
+/* ── 6. Who This Is For ── */
+.prf-integrations .prf-audience__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--prf-space-sm);
+}
+
+.prf-integrations .prf-audience__list li {
+  padding-left: var(--prf-space-sm);
+  border-left: 3px solid var(--prf-color-accent);
+  line-height: 1.5;
+}
+
+.prf-integrations .prf-audience__list strong {
+  color: var(--prf-color-text);
+}
+
+/* ── 7. CTA ── */
+.prf-integrations .prf-cta {
+  text-align: center;
+}
+
+.prf-integrations .prf-cta__heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: var(--prf-space-sm);
+}
+
+.prf-integrations .prf-cta__body {
+  color: var(--prf-color-text-secondary);
+  margin-bottom: var(--prf-space-md);
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prf-integrations .prf-cta__button {
+  display: inline-block;
+  background: var(--prf-color-accent);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.prf-integrations .prf-cta__button:hover {
+  background: var(--prf-color-accent-hover);
+}
+
+/* ── Responsive: Tablet (768px+) ── */
+@media (min-width: 768px) {
+  .prf-integrations .prf-section {
+    padding: var(--prf-space-xl) var(--prf-space-md);
+  }
+
+  .prf-integrations .prf-hero {
+    padding: 96px var(--prf-space-md) var(--prf-space-xl);
+  }
+
+  .prf-integrations .prf-methods__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .prf-integrations .prf-stories__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .prf-integrations .prf-stories__grid .prf-story-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - var(--prf-space-md) / 2);
+    justify-self: center;
+  }
+}
+
+/* ── Responsive: Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+  .prf-integrations .prf-container {
+    max-width: var(--prf-max-width);
+  }
+
+  .prf-integrations h1 {
+    font-size: 3rem;
+  }
+}
+</style>
+
+  <!-- 1. Hero -->
+  <section class="prf-hero">
+    <div class="prf-container">
+      <h1>Integrations</h1>
+      <p class="prf-hero__subtitle">Your data already holds the answers. Integration is how you unlock them.</p>
+    </div>
+  </section>
+
+  <!-- 2. Narrative — What We Mean by Integration -->
+  <section class="prf-section prf-narrative">
+    <div class="prf-container">
+      <h2>What We Mean by Integration</h2>
+      <p>Most organizations don't have a data problem — they have a connection problem. Information lives in a dozen places: a club management platform here, a student information system there, spreadsheets emailed back and forth, PDFs buried in shared drives. Each system works on its own, but none of them talk to each other. The result is that the people who need answers spend their time hunting for data instead of acting on it.</p>
+      <p>At Proof, integration means becoming what we call "human middleware." We sit between your systems, your processes, and your people — understanding how work actually flows before we connect a single data point. We've mapped a 15-system landscape for a college prep school, unified years of scattered financial documents for a private club, and built middleware layers that keep schools running while legacy platforms are carefully retired. The technology matters, but it's never where we start.</p>
+      <p>The payoff is straightforward: when your systems finally communicate, your staff stop being data couriers and start being decision-makers. The admissions director who used to spend mornings copying records between platforms now reviews a single dashboard. The operations manager who cobbled together reports from three sources now asks a question in plain language and gets an answer in seconds. Integration gives your people their expertise back.</p>
+    </div>
+  </section>
+
+  <!-- 3. Customer Stories — "Problems We've Solved" -->
+  <section class="prf-section prf-section--alt">
+    <div class="prf-container">
+      <h2>Problems We've Solved</h2>
+      <div class="prf-stories__grid">
+
+        <!-- Story 1: Stock Farm Club -->
+        <article class="prf-story-card">
+          <span class="prf-story-card__tag">Private Club</span>
+          <h3 class="prf-story-card__headline">Turning scattered documents into strategic insight</h3>
+          <p class="prf-story-card__body">A private club in the Mountain West had been struggling with declining food &amp; beverage sales, membership retention, and falling revenue. Financial data lived across a patchwork of formats — spreadsheets, PDFs, internal documents — disconnected from their club management software. Leadership had questions but no efficient way to get answers.</p>
+          <p class="prf-story-card__body">Proof integrated their disparate business documents with their ClubEssentials platform, giving leadership the ability to ask real questions and get actionable answers: revenue trends by category, membership funnel drop-off points, dining satisfaction scores, facilities utilization, and capital project prioritization — all from a single conversational interface.</p>
+          <blockquote class="prf-story-card__quote">"We went from digging through spreadsheets to asking a question and getting an answer. It changed how we make decisions."</blockquote>
+          <div class="prf-story-card__tech">
+            <span>N8N</span>
+            <span>Claude / AI</span>
+            <span>MCP</span>
+            <span>Google Drive</span>
+            <span>Google Sheets</span>
+            <span>ClubEssentials</span>
+          </div>
+        </article>
+
+        <!-- Story 2: BostonCSS -->
+        <article class="prf-story-card">
+          <span class="prf-story-card__tag">Student Services</span>
+          <h3 class="prf-story-card__headline">Connecting hospital intake to transportation in real time</h3>
+          <p class="prf-story-card__body">A student services company on the East Coast provides a "family away from home" for international and out-of-state students at New England prep schools — everything from doctor visits to college prep to school shopping. When a student needed hospital transport, coordinators were juggling phone calls and manual scheduling with their livery partners.</p>
+          <p class="prf-story-card__body">Proof built an integration between their hospital intake process and livery team coordination, streamlining what had been a stressful, error-prone workflow into a system that keeps students safe and gets them where they need to be — reliably and on time.</p>
+          <blockquote class="prf-story-card__quote">"The intake-to-transport handoff used to be our biggest source of stress. Now it just works."</blockquote>
+          <div class="prf-story-card__tech">
+            <span>Claris FileMaker</span>
+            <span>REST APIs</span>
+          </div>
+        </article>
+
+        <!-- Story 3: Archbishop Mitty -->
+        <article class="prf-story-card">
+          <span class="prf-story-card__tag">Education — High School</span>
+          <h3 class="prf-story-card__headline">Unifying 15 systems without disrupting a running school</h3>
+          <p class="prf-story-card__body">A 1,700-student college prep school in California had systems for campus ministry, student activities, financial aid, service learning, registration, visitation, academics, and more — each running independently. The school needed to migrate off a legacy platform while keeping every system operational for students and staff.</p>
+          <p class="prf-story-card__body">Proof mapped the full landscape, built middleware to connect disparate platforms, and executed a thoughtful migration toward a more componentized architecture. The school never missed a beat. Systems now integrate with Google, JAMF, attendance, SSO, and a dozen other services through both API and non-API connections.</p>
+          <blockquote class="prf-story-card__quote">"They connected everything without breaking anything. Our staff didn't even notice the transition — and that was the whole point."</blockquote>
+          <div class="prf-story-card__tech">
+            <span>Claris FileMaker</span>
+            <span>Django / Python</span>
+            <span>Flask / Python</span>
+            <span>OneLogin SSO</span>
+            <span>LDAP</span>
+            <span>AWS</span>
+            <span>Google APIs</span>
+            <span>JAMF</span>
+            <span>Zendesk</span>
+          </div>
+        </article>
+
+        <!-- Story 4: TSCU -->
+        <article class="prf-story-card">
+          <span class="prf-story-card__tag">Education — K-8</span>
+          <h3 class="prf-story-card__headline">Building operational infrastructure one phase at a time</h3>
+          <p class="prf-story-card__body">A K-8 laboratory school in Manhattan serves a diverse community through a lottery-based admissions process, an interdisciplinary curriculum, and an after-school program with over 80 classes. Nearly every operational system — notifications, emergency management, admissions, enrollment, financial aid, after-school, and their lottery — needed integration and modernization.</p>
+          <p class="prf-story-card__body">Proof worked in iterative phases, delivering value at each stage rather than attempting one massive overhaul. The school now runs on connected systems that share data across platforms, with calendar integration, automated workflows, and training resources so staff can maintain and extend what was built.</p>
+          <blockquote class="prf-story-card__quote">"They didn't try to do everything at once. Each phase solved a real problem, and by the end we had a system that actually reflected how we work."</blockquote>
+          <div class="prf-story-card__tech">
+            <span>Claris FileMaker</span>
+            <span>Claris Connect</span>
+            <span>Google Calendar</span>
+            <span>Python</span>
+            <span>Drupal</span>
+            <span>REST APIs</span>
+          </div>
+        </article>
+
+        <!-- Story 5: ProofChat -->
+        <article class="prf-story-card">
+          <span class="prf-story-card__tag">AI Integration</span>
+          <h3 class="prf-story-card__headline">Giving databases a conversational layer — with guardrails</h3>
+          <p class="prf-story-card__body">ProofChat is Proof's own AI-driven interface that lets users interact with Claris FileMaker data using natural language. Instead of navigating complex screens or writing queries, users ask questions in plain language — and the system translates those into real actions: pulling reports, answering questions, even updating records.</p>
+          <p class="prf-story-card__body">Critically, ProofChat is built with a human-in-the-loop philosophy. Sensitive operations require manual approval before execution. The AI's actions stay grounded in actual data, not hallucinated answers. It's a model for how integration with AI should work: powerful access, human oversight.</p>
+          <blockquote class="prf-story-card__quote">"Our users can ask the database a question in English. But anything that changes data still goes through a person. That's the balance we wanted."</blockquote>
+          <div class="prf-story-card__tech">
+            <span>Claris FileMaker</span>
+            <span>MCP</span>
+            <span>LLM Tools</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. How We Work -->
+  <section class="prf-section">
+    <div class="prf-container">
+      <h2>How We Work</h2>
+      <div class="prf-methods__grid">
+
+        <div class="prf-method-block">
+          <h3>We listen before we build</h3>
+          <p class="prf-method-block__body">Before writing a line of code, we map your real processes — how data actually moves, who touches it, and where things break down. The architecture comes from understanding, not assumptions.</p>
+          <p class="prf-method-block__anecdote">When a 1,700-student school in California asked for help, we started by mapping all 15 of their interconnected systems — campus ministry, financial aid, registration, and more — before proposing a single change. That map became the foundation for everything that followed.</p>
+        </div>
+
+        <div class="prf-method-block">
+          <h3>We preserve your investment</h3>
+          <p class="prf-method-block__body">You don't have to throw away what you've built. We connect your existing systems, strengthen what's working, and retire what isn't — without losing the data and institutional knowledge you've accumulated.</p>
+          <p class="prf-method-block__anecdote">A private club in the Mountain West had years of financial and membership data scattered across formats and platforms. Instead of starting over, we integrated those documents with their existing management software — preserving every data point and making it all queryable for the first time.</p>
+        </div>
+
+        <div class="prf-method-block">
+          <h3>We iterate, not overhaul</h3>
+          <p class="prf-method-block__body">Big-bang launches are risky and stressful. We deliver in focused phases — each one solving a real problem and proving value — so you see progress early and can adjust course as you learn.</p>
+          <p class="prf-method-block__anecdote">A K-8 school in Manhattan needed to modernize nearly every operational system. Rather than one massive rollout, we worked phase by phase — admissions first, then enrollment, then after-school programming — each stage building on the last. The school never had to stop and wait.</p>
+        </div>
+
+        <div class="prf-method-block">
+          <h3>We stay human-in-the-middle</h3>
+          <p class="prf-method-block__body">Automation is powerful, but oversight matters. We design systems where people stay in the loop — especially when actions affect real data, real money, or real people.</p>
+          <p class="prf-method-block__anecdote">ProofChat lets users query and update a database using natural language. But any operation that modifies data requires a human to approve it first. We built it that way on purpose — because the goal of integration is to empower people, not replace their judgment.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Technology Note -->
+  <section class="prf-section prf-section--alt prf-tech-note">
+    <div class="prf-container">
+      <h2>A Note on Technology</h2>
+      <p>We work across a wide range of platforms and tools — Claris FileMaker, Python, Django, REST APIs, AI and large language models, cloud infrastructure, single sign-on, workflow automation, and more. If your systems involve it, chances are we've connected to it.</p>
+      <p>But we've learned that the technology is rarely the hard part. The real work is understanding your processes — how work actually flows through your organization, who uses the systems, who avoids them and why, and what becomes possible when everything finally connects. Proof was founded by educators, not engineers. That background shows up in how we approach every project: people and processes first, technology in service of both.</p>
+    </div>
+  </section>
+
+  <!-- 6. Who This Is For -->
+  <section class="prf-section">
+    <div class="prf-container">
+      <h2>Who This Is For</h2>
+      <ul class="prf-audience__list">
+        <li><strong>Business leaders whose systems don't talk to each other.</strong> You know the data is there, but getting a clear picture means pulling from five places and hoping nothing is out of date.</li>
+        <li><strong>Technical staff managing too many platforms.</strong> You're the one holding it all together with workarounds and manual processes — and you need a partner, not another vendor.</li>
+        <li><strong>Leaders future-proofing their operations.</strong> You're investing in your people and systems now so the business sustains and grows — whether you're scaling, planning a transition, or building for the next decade.</li>
+        <li><strong>Organizations that have outgrown their tools.</strong> The system that worked five years ago doesn't match how you operate today. You need it to evolve without starting from zero.</li>
+        <li><strong>Schools and institutions with disconnected platforms.</strong> Admissions, enrollment, financial aid, student life — each in its own silo. Your staff spends more time on data entry than on the work that matters.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Call to Action -->
+  <section class="prf-section prf-section--alt prf-cta">
+    <div class="prf-container">
+      <h2 class="prf-cta__heading">You might be closer to a solution than you think</h2>
+      <p class="prf-cta__body">If any of this sounds familiar, we'd like to hear about it. No pitch, no pressure — just a conversation about where you are and what might be possible.</p>
+      <a href="#contact" class="prf-cta__button">Start a conversation</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- SCAFFOLDING: strip outer html/head/body when embedding -->
+</body>
+</html>
